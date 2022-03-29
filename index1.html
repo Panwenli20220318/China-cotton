@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>中国棉花大数据展示</title>
+		<link rel="stylesheet" href="css/wodry.css">
+		<link rel="stylesheet" href="css/index1.css">
+		<link rel="stylesheet" href="css/public.css">
+		<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script>
+			$(function() {
+				$('.myscroll').myScroll({
+					speed: 60, //数值越大，速度越慢
+					rowHeight: 38 //li的高度
+				});
+			});
+
+			$(document).ready(function() {
+				var whei = $(window).width()
+				$("html").css({
+					fontSize: whei / 22
+				});
+				$(window).resize(function() {
+					var whei = $(window).width();
+					$("html").css({
+						fontSize: whei / 22
+					})
+				});
+			});
+		</script>
+	</head>
+	<body>
+
+		<div class="main">
+			<div class="header">
+				<div class="header-left fl" id="time"></div>
+				<div class="header-center fl">
+					<div class="header-title">
+						中国棉花大数据展示
+					</div>
+					<div class="header-img"></div>
+				</div>
+				<div class="header-right fl"></div>
+				<div class="header-bottom fl"></div>
+
+			</div>
+
+			<div class="center">
+				<div class="center-left fl">
+					<div class="left-top rightTop border">
+						<div class="title">基本信息</div>
+						<!-- 数据来源：国家统计局关于2020年棉花产量的公告,中国棉花协会——中国棉花供需平衡表2020 -->
+						<div class="top-list">
+							<p>&nbsp&nbsp中国是全球第一大原棉生产国、第一大棉花消费国和进口国，同时也是全球最大的纺织品服装出口国。</p>
+							<ul>
+								<li>总产量：591.0 万吨</li>
+								<li>播种面积：3169.9 千公顷</li>
+								<li>单位面积产量：1864.5 公斤/公顷</li>
+								<li>总出口量： 3 万吨</li>
+								<li>总进口量：235 万吨</li>
+							</ul>
+						</div>
+
+					</div>
+					<div class="left-cen rightTop border">
+						<div class="title">全球棉花产量排名（单位:万吨）</div>
+						<!-- 数据来源：美国农业部，https://baijiahao.baidu.com/s?id=1696823702822215463&wfr=spider&for=pc -->
+						<!-- 注：中国棉花产量为美国农业部统计口径，与国家统计局数据存在差异 -->
+						<div class="bottom-b">
+							<div id="chart1" class="allnav"></div>
+						</div>
+					</div>
+
+					<div class="left-bottom rightTop border">
+						<div class="title">全球棉花消耗占比</div>
+						<!-- 数据来源：美国农业部，https://baijiahao.baidu.com/s?id=1696823702822215463&wfr=spider&for=pc -->
+						<div class="bottom-b">
+							<div id="chart2" class="allnav" style="margin-top: 30px;"></div>
+						</div>
+
+					</div>
+				</div>
+				<div class="center-cen fl">
+					<div class="cen-top rightTop border">
+						<div class="title">棉花产量分布图</div>
+						<!-- 数据来源：2020新疆统计年鉴 -->
+						<div class="top-bottom">
+							<div id="map" class="allnav" style="height: 6rem;width: 9rem;left: 0.5rem;top: -1.2rem">
+							</div>
+						</div>
+					</div>
+					<div class="cen-bottom rightTop border">
+						<div class="title">近15年中国棉花数据</div>
+						<!-- 数据来源：国家统计局-->
+						<div class="bottom-b">
+							<div id="chart4" class="allnav"></div>
+						</div>
+
+					</div>
+				</div>
+				<div class="center-right fr">
+					<div class="right-top rightTop border">
+						<div class="title">年度新闻</div>
+						<!-- 中国棉花网整理出的2020年度十大新闻 -->
+						<div class="echart wenzi">
+							<div class="gun">
+								<span class="span1">热点</span>
+								<span class="span2">主题</span>
+							</div>
+							<div id="FontScroll" class="myscroll">
+								<ul>
+									<li>
+										<div class="fontInner clearfix">
+											<span class="span_1">
+												<b>1</b>
+											</span>
+											<span class="span_2"> <a
+													href="http://www.cncotton.com/sy_59/gjmh_1401/scfx/202001/t20200108_590923.html"
+													target="_blank">澳大利亚大火肆虐 棉花产量可能归零</a> </span>
+										</div>
+									</li>
+									<li>
+										<div class="fontInner clearfix">
+											<span class="span_1">
+												<b>2</b>
+											</span>
+											<span class="span_2"><a
+													href="http://www.cncotton.com/sy_59/gnmh_1388/rdxw/202001/t20200123_591153.html"
+													target="_blank">新型冠状病毒再掀棉市波澜</a></span>
+										</div>
+									</li>
+									<li>
+										<div class="fontInner clearfix">
+											<span class="span_1">
+												<b>3</b>
+											</span>
+											<span class="span_2"><a
+													href="http://www.cncotton.com/sy_59/gnmh_1388/rdxw/202002/t20200213_591298.html"
+													target="_blank">新冠肺炎对棉花产业有哪些影响？</a></span>
+										</div>
+									</li>
+									<li>
+										<div class="fontInner clearfix">
+											<span class="span_1">
+												<b>4</b>
+											</span>
+											<span class="span_2"><a
+													href="http://www.cncotton.com/sy_59/gnmh_1388/rdxw/202002/t20200218_591340.html"
+													target="_blank">蝗虫炒作结束 棉花不具备大涨基础</a></span>
+										</div>
+									</li>
+									<li>
+										<div class="fontInner clearfix">
+											<span class="span_1">
+												<b>5</b>
+											</span>
+											<span class="span_2"><a
+													href="http://www.cncotton.com/sy_59/gnmh_1388/rdxw/202003/t20200325_591933.html"
+													target="_blank">坯布：海外订单大量取消 价格战一触即发</a></span>
+										</div>
+									</li>
+									<li>
+										<div class="fontInner clearfix">
+											<span class="span_1">
+												<b>6</b>
+											</span>
+											<span class="span_2"><a
+													href="http://www.cncotton.com/sy_59/xjztc/202002/t20200225_591464.html"
+													target="_blank">新疆：公路运输受限 铁运缓慢恢复</a></span>
+										</div>
+									</li>
+									<li>
+										<div class="fontInner clearfix">
+											<span class="span_1">
+												<b>7</b>
+											</span>
+											<span class="span_2"><a
+													href="http://www.cncotton.com/sy_59/gnmh_1388/rdxw/202007/t20200701_593798.html"
+													target="_blank">2020年中央储备棉轮出政策解读</a></span>
+										</div>
+									</li>
+									<li>
+										<div class="fontInner clearfix">
+											<span class="span_1">
+												<b>8</b>
+											</span>
+											<span class="span_2"><a
+													href="http://www.cncotton.com/mrzl/zlrw/fdx/202009/t20200929_595610.html"
+													target="_blank">冯梦晓：2020/2021年度棉花市场预警报告</a></span>
+										</div>
+									</li>
+									<li>
+										<div class="fontInner clearfix">
+											<span class="span_1">
+												<b>9</b>
+											</span>
+											<span class="span_2"><a href="http://info.texnet.com.cn/detail-829890.html"
+													target="_blank">深度调查：2020年新疆棉市场解析</a></span>
+										</div>
+									</li>
+									<li>
+										<div class="fontInner clearfix">
+											<span class="span_1">
+												<b>10</b>
+											</span>
+											<span class="span_2"><a
+													href="http://www.cncotton.com/sy_59/gjmh_1401/scfx/202008/t20200828_594982.html"
+													target="_blank">美国加强涉疆产品管制 新疆棉受影响？</a></span>
+										</div>
+									</li>
+
+								</ul>
+							</div>
+						</div>
+
+					</div>
+					<div class="right-cen border">
+						<div class="title">各地区产量占比</div>
+						<!-- 数据来源：国家统计局  https://www.chyxx.com/industry/202012/918792.html -->
+						<div class="right-cen-cent">
+							<div id="chart5" class="allnav"></div>
+						</div>
+					</div>
+					<div class="right-bottom rightTop border">
+						<div class="title">进口情况</div>
+						<!-- 数据来源：中商产业研究院数据库 https://www.askci.com/news/data/maoyi/20210119/1140501332796.shtml-->
+						<div class="chat">
+							<div id="chart6" class="allnav"></div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+
+		<script src="js/jquery.min.js"></script>
+		<script src="https://www.jq22.com/jquery/echarts-4.2.1.min.js"></script>
+		<script src="js/wodry.min.js"></script>
+		<script src="js/fontscroll.js"></script>
+		<script src="js/index1.js"></script>
+		<script src="js/china.js"></script>
+		<script type="text/javascript" src="js/vue.min.js"></script>
+		<script type="text/javascript" src="js/index1_data.js"></script>
+
+		<script>
+			var counter = 3000;
+			var ulist = document.getElementById("form").getElementsByTagName("li");
+			for (var i = 0; i < ulist.length; i++) {
+				var liclass = ulist[i].className;
+				var a = $('.' + liclass + '').wodry({
+					animation: 'rotateX',
+					delay: counter,
+					animationDuration: 1000
+				});
+				if (counter > 3050) {
+					counter = 3000;
+				} else {
+					counter += 10;
+				}
+			}
+
+			//顶部时间
+			function getTime() {
+				var myDate = new Date();
+				var myYear = myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+				var myMonth = myDate.getMonth() + 1; //获取当前月份(0-11,0代表1月)
+				var myToday = myDate.getDate(); //获取当前日(1-31)
+				var myDay = myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
+				var myHour = myDate.getHours(); //获取当前小时数(0-23)
+				var myMinute = myDate.getMinutes(); //获取当前分钟数(0-59)
+				var mySecond = myDate.getSeconds(); //获取当前秒数(0-59)
+				var week = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+				var nowTime;
+
+				nowTime = myYear + '-' + fillZero(myMonth) + '-' + fillZero(myToday) + '&nbsp;&nbsp;' + fillZero(myHour) + ':' +
+					fillZero(myMinute) + ':' + fillZero(mySecond) + '&nbsp;&nbsp;' + week[myDay] + '&nbsp;&nbsp;';
+				//console.log(nowTime);
+				$('#time').html(nowTime);
+			};
+
+			function fillZero(str) {
+				var realNum;
+				if (str < 10) {
+					realNum = '0' + str;
+				} else {
+					realNum = str;
+				}
+				return realNum;
+			}
+			setInterval(getTime, 1000);
+		</script>
+
+	</body>
+</html>
